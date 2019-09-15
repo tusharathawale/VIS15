@@ -1,0 +1,35 @@
+Instructions for Ubuntu:
+
+1) Extracted ijkmcube, isotable and lib are on path 
+prj_dir = codeNonparametric\ensembleKde\kde\triangle_kde\
+
+2) Navigate to prj_dir/ijkmcube folder (and delete CMakeCache.txt if one exists)
+
+3) Now, reconfigure project using following commands:
+
+-Type "ccmake ." and "c" twice to configure.
+
+-Check that IJK_DIR is set to project directory. [Here: prj_dir]
+(If not, modify the path for IJK_DIR.)
+
+-Check that IJK_ISOTABLE_DIR is set to directory containing the isosurface lookup tables. [Here: prj_dir/isotable]
+(If not, modify the path for IJK_ISOTABLE_DIR.)
+
+-Check that LIBRARY_OUTPUT_PATH is set to directory containing libraries (libteem and libexpat). [Here: prj_dir/lib]
+(If not, modify the path for LIBRARY_OUTPUT_PATH.)
+
+-Press "g" to generate the Makefile and exit.
+
+-Type "cmake .".
+
+-Type "make" to create executable "ijkmcube".
+
+-Type "make install" to install executables in ${IJK_DIR}/bin.		
+
+
+
+Please install the isosurface visualization software "geomview" on your system:
+
+sudo apt-get install geomview
+
+
